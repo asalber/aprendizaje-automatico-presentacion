@@ -1,0 +1,43 @@
+---
+title: Presentaciones de Aprendizaje Automático
+format: 
+    html:
+        theme:
+            dark: [darkly, custom-dark.scss]
+            light: [flatly, custom.scss]
+lang: es
+---
+
+Presentaciones de [aprendizaje automático](https://aprendeconalf.es/aprendizaje-automatico-presentacion/).
+
+1. [Introducción](01-introduccion.html).
+2. [Redes neuronales recurrentes](09-redes-neuronales-recurrentes.html)
+
+## Licencia
+
+Esta obra está bajo una licencia Atribución/Reconocimiento – No comercial – CompartirIgual 4.0 Internacional de Creative Commons. Para ver una copia de esta licencia, visite (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+Con esta licencia eres libre de:
+
+- Copiar, distribuir y mostrar este material en cualquier medio.
+- Realizar modificaciones de este material.
+
+Bajo las siguientes condiciones:
+
+- **Atribución**
+Usted debe dar crédito de manera adecuada , brindar un enlace a la licencia, e indicar si se han realizado cambios . Puede hacerlo en cualquier forma razonable, pero no de forma tal que sugiera que usted o su uso tienen el apoyo de la licenciante.
+
+- **No comercial**
+Usted no puede hacer uso del material con propósitos comerciales.
+
+- **Compartir Igual**
+Si altera o transforma esta obra, o genera una obra derivada, sólo puede distribuir la obra generada bajo una licencia idéntica a ésta.
+
+Al reutilizar o distribuir la obra, tiene que dejar bien claro los términos de la licencia de esta obra.
+
+Estas condiciones pueden no aplicarse si se obtiene el permiso del titular de los derechos de autor.
+
+Nada en esta licencia menoscaba o restringe los derechos morales del autor.
+
+
+<a href="https://creativecommons.org">© 2025 por <a href="https://aprendecconalf.es">Alfredo Sánchez Alberca</a> trabajo licenciado bajo <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">

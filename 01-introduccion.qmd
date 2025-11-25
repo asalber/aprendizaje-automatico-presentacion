@@ -1,0 +1,256 @@
+---
+title: "Introducción al Aprendizaje Automático"
+author: "Alfredo Sánchez Alberca &nbsp; [{{< fa envelope >}}](mailto:asalber@ceu.es) [{{< fa brands bluesky >}}](https://aprendeconalf.bsky.social) [{{< fa home >}}](https://aprendeconalf.es)"
+institute: Universidad CEU San Pablo
+logo: img/logos/sticker.png
+# title-slide-attributes:
+#     #data-background-color: black
+#     data-background-image: img/prompt-julia.png
+#     data-background-size: contain
+format: revealjs
+lang: es
+fig-align: center
+navigation-mode: vertical
+slide-level: 3
+---
+
+## ¿Qué es el aprendizaje?
+
+:::{#def-aprendizaje}
+## Aprendizaje
+
+- Adquirir o intentar adquirir conocimiento o la capacidad de hacer algo.
+- Asistir a un curso u otra actividad educativa.
+- Aprovechar una mala experiencia.
+- Mejorar, posiblemente siguiendo instrucciones.
+- Enterarse; informarse; descubrir algo.
+:::
+
+El aprendizaje tiene que ver con:
+
+- Ganar conocimiento, comprensión o habilidad.
+- Modificación de una tendencia de comportamiento para mejorar.
+
+Ambas cosas utilizando la **experiencia**.
+
+## ¿Qué es el aprendizaje automático?
+
+**Definiciones informales:**
+
+- Modificación de una tendencia de comportamiento mediante la experiencia (Webster 1984).
+- Una máquina que aprende es cualquier dispositivo cuyas acciones se ven influenciadas por experiencias pasadas (Nilsson 1965).
+- Cualquier cambio en un sistema que le permita realizar mejor una tarea la segunda vez o en otra tarea similar (Simon 1983).
+- Mejora en la habilidad para procesar información como resultado del procesamiento de información (Tanimoto 1990).
+
+En general, podemos decir que una máquina aprende cuando **modifica su estructura, programa o datos de tal forma que mejora su rendimiento futuro esperado**.
+
+## ¿Puede una máquina aprender?
+
+¿Puede una máquina aprender a ...?
+
+- ¿Conducir un coche?
+- ¿Diagnosticar una enfermedad?
+- ¿Jugar a un juego (como el ajedrez)?
+- ¿Reconocer caras, escritura a mano o palabras habladas?
+- ¿Predecir el clima?
+- ...
+
+--- 
+
+De cierta manera, las máquinas pueden aprender de la experiencia, igual que los humanos.
+
+Principalmente usamos cuatro tipos de razonamiento:
+
+- **Deductivo:** de reglas a hechos.
+- **Inductivo:** de hechos a reglas.
+- **Abductivo:** combinación de deductivo e inductivo.
+- **Por analogía:** de hechos a hechos.
+
+El aprendizaje automático usa principalmente el razonamiento inductivo.
+
+> **¡Las máquinas aprenden de hechos o ejemplos!**
+
+## ¿Por qué deberían aprender las máquinas?
+
+Hay varias razones para el aprendizaje automático:
+
+- Algunas tareas no se pueden definir bien excepto mediante ejemplos.
+- A menudo, relaciones importantes están ocultas en grandes cantidades de datos (minería de datos).
+- Algunas especificaciones del sistema pueden no conocerse completamente al diseñarse.
+- La cantidad de conocimiento disponible puede ser demasiado grande para codificar explícitamente.
+- Los entornos cambian con el tiempo y las máquinas deben adaptarse.
+- El aprendizaje automático podría ayudar a entender el aprendizaje humano.
+
+## Disciplinas relacionadas con el aprendizaje automático
+
+El aprendizaje automático es un campo multidisciplinar que reúne teorías, métodos y técnicas de:
+
+::: {.columns}
+::: {.column width="50%"}
+- Filosofía
+- Psicología
+- Neurobiología
+- Matemáticas
+- Estadística
+- Ciencias de la Computación
+  - Inteligencia Artificial
+- Teoría de la Información
+:::
+
+::: {.column width="50%"}
+- Teoría de Control
+- Lingüística
+- Modelos evolutivos
+- Ingeniería
+- Economía
+- Sociología
+- Educación
+:::
+:::
+
+## Aplicaciones
+
+Ejemplos exitosos:
+
+- Reconocimiento del habla (SPHINX).
+- Conducción autónoma (ALVINN).
+- Clasificación de objetos celestes.
+- Juegos (backgammon TD-GAMMON).
+- Diseño de artefactos electromecánicos (GOLEM).
+- ChatGPT.
+
+---
+
+Otras aplicaciones:
+
+- Sistemas expertos.
+- Minería de datos.
+- Clasificación.
+- Predicción.
+- Planificación.
+- Robótica.
+
+## ¿Qué se debe aprender?
+
+Se aprende una estructura computacional:
+
+- Funciones.
+- Programas lógicos/reglas.
+- Máquinas de estado finito.
+- Gramáticas.
+- Sistemas de resolución de problemas.
+
+Esto implica crear o modificar estructuras existentes.
+
+---
+
+:::{#def-aprendizaje-automatico}
+## Aprendizaje automático (Mitchell 1997)
+Se dice que un programa _aprende_ de una _experiencia_ $E$ con respecto a una _tarea_ $T$ y una _medida de rendimiento_ $P$, si su rendimiento en la realización de la tarea $T$, según se mide con $P$, mejora con la experiencia $E$.
+:::
+
+Según esta definición se identifican tres elementos en un problema de aprendizaje:
+
+- Tareas ($T$)
+- Medida de rendimiento ($P$)
+- Experiencia ($E$)
+
+---
+
+:::{#exm-damas-escritura}
+
+- Juego de damas:
+  - Tarea: jugar.
+  - Rendimiento: ganar partidas.
+  - Experiencia: práctica contra sí mismo.
+
+- Reconocimiento de escritura:
+  - Tarea: reconocer palabras manuscritas.
+  - Rendimiento: porcentaje correcto.
+  - Experiencia: base de datos clasificada.
+:::
+
+## Diseño de un sistema de aprendizaje
+
+Se debe definir:
+
+- Experiencia de entrenamiento (_¿qué experiencia?_).
+- Función objetivo (_¿qué aprender exactamente?_).
+- Representación de la función objetivo (_¿cómo representarla?_).
+- Algoritmo específico de aprendizaje (_¿cómo aprender?_)
+
+---
+
+:::{#exm-damas}
+En el caso de un juego de damas, a la hora de definir la experiencia de entrenamiento, se pueden considerar dos enfoques:
+
+- Experiencia directa o indirecta:
+  - Directa: Tenemos pares de estados del tablero → movimiento correcto.
+  - Indirecta: Tenemos una lista de movimientos y el resultado final de la partida.
+
+- Control en la secuencia de ejemplos:
+  - El profesor selecciona estados del tablero y proporciona el movimiento correcto.
+  - El algoritmo de aprendizaje puede seleccionar tableros difíciles de resolver y pedir ayuda al profesor sobre el siguiente movimiento.
+  - El algoritmo de aprendizaje aprende jugando contra sí mismo sin profesor.
+
+- ¿Es representativa la experiencia de entrenamiento con respecto al objetivo final?
+
+  - Entrenar jugando contra sí mismo.
+  - Evaluar jugando contra un campeón mundial.
+:::
+
+## Selección de la función objetivo
+
+En damas pueden existir múltiples opciones:
+
+- **ElegirMovimiento**: Estado del tablero → Movimiento legal.
+- **Evaluar**: Estado del tablero → Valor numérico.
+
+Se asigna una puntuación numérica a cada estado del tablero, escogiendo luego el movimiento que maximiza dicha puntuación.
+
+> _¿Cuál es más fácil de aprender?_
+
+## Espacio de búsqueda
+
+Una vez elegida la función objetivo, se define un espacio de búsqueda que debe explorarse buscando la jugada óptima.
+
+(Imagen original no incluida)
+
+## Definición posible de la función objetivo
+
+Podemos definir el valor objetivo $V(b)$ para un estado del tablero $b$:
+
+- Si $b$ es estado final ganado: $V(b) = 100$.
+- Si $b$ es estado final perdido: $V(b) = -100$.
+- Si $b$ es estado final empatado: $V(b) = 0$.
+- Si no es estado final, entonces $V(b) = V(b')$, siendo $b'$ el mejor estado alcanzable desde $b$.
+
+> _Esta definición es correcta pero no operativa por no ser computable eficientemente._
+
+Así, la tarea de aprendizaje se reduce a descubrir una descripción operativa de la función objetivo ideal $V$.
+
+## Representación de la función objetivo
+
+Elegida la función objetivo ideal $V$, se debe escoger una representación para el aprendizaje:
+
+Opciones posibles:
+
+- Tabla grande especificando valores para cada estado del tablero.
+- Colección de reglas sobre características del tablero.
+- Función polinómica sobre características predefinidas.
+- Red neuronal artificial.
+
+Esta elección implica un balance crucial:
+
+- Representaciones muy expresivas permiten mejor aproximación a $V$.
+- Pero requieren más ejemplos para aprender $V$.
+
+## Representación posible de la función objetivo
+
+Una opción simple es representar el estimador de $V$ mediante una función lineal:
+
+$$
+\hat{V}(b) = w_0 + w_1 x_1 + w_2 x_2 + \dots + w_n x_n
+$$
+
+Donde $w_i$ son pesos ajustables y $x_i$ son características del estado $b$.
