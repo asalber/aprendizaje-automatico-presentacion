@@ -137,13 +137,18 @@
         <p class="institute">Universidad CEU San Pablo</p>
       
   </section>
+<section id="neurona-tradicional-perceptron" class="title-slide slide level2 center">
+<h2>Neurona tradicional (perceptron)</h2>
+
+<img data-src="img/05-aprendizaje-supervisado/perceptron.svg" class="r-stretch quarto-figure-center"><p class="caption">Neurona tradicional</p></section>
+
 <section>
 <section id="neurona-recurrente" class="title-slide slide level2 center">
 <h2>Neurona recurrente</h2>
 <p>Una neurona recurrente recibe un vector de entrada <span class="math inline">\(x_t\)</span> y un estado oculto previo <span class="math inline">\(h_{t-1}\)</span>.</p>
 <p>Actualización típica: <span class="math display">\[
-  h_t = f(W_{xh}x_t + W_{hh}h_{t-1} + b_h), \quad
-  y_t = g(W_{hy}h_t + b_y)
+  h_t = f(W_{hx}x_t + W_{hh}h_{t-1} + b_h), \quad
+  y_t = g(W_{yh}h_t + b_y)
   \]</span></p>
 <p>La <em>función de activación</em> <span class="math inline">\(f\)</span> suele ser <span class="math inline">\(\tanh\)</span> o ReLU.</p>
 <p>La función de salida <span class="math inline">\(g\)</span> depende de la tarea (identidad para regresión, softmax para clasificación).</p>
@@ -152,6 +157,10 @@
 
 
 <img data-src="img/09-redes-neuronales-recurrentes/neurona-recurrente.svg" class="r-stretch quarto-figure-center"><p class="caption">Neurona recurrente</p></section>
+<section class="slide level3">
+
+
+<img data-src="img/09-redes-neuronales-recurrentes/despliegue-red-neuronal-recurrente.svg" class="r-stretch quarto-figure-center"><p class="caption">Despliegue temporal de una red neuronal recurrente</p></section>
 <section id="memoria-del-estado-oculto" class="slide level3">
 <h3>Memoria del estado oculto</h3>
 <p>El estado tiene memoria: <span class="math inline">\(h_t\)</span> acumula efectos de entradas previas.</p>
@@ -236,6 +245,10 @@ h_t^{(l)} = \phi(W^{(l)}_{xh} h_t^{(l-1)} + W^{(l)}_{hh} h_{t-1}^{(l)} + b^{(l)}
   \]</span></p>
 <p>El estado de celda <span class="math inline">\(c_t\)</span> crea un camino aditivo que preserva gradiente en el tiempo.</p>
 </section>
+<section class="slide level3">
+
+
+<img data-src="img/09-redes-neuronales-recurrentes/neurona-lstm.png" class="r-stretch quarto-figure-center"><p class="caption">Neurona LSTM</p></section>
 <section id="gru-gated-recurrent-unit" class="slide level3">
 <h3>GRU (Gated Recurrent Unit)</h3>
 <p>Mezcla compuertas y estado <span class="math display">\[
@@ -247,7 +260,11 @@ h_t^{(l)} = \phi(W^{(l)}_{xh} h_t^{(l-1)} + W^{(l)}_{hh} h_{t-1}^{(l)} + b^{(l)}
   \end{aligned}
   \]</span></p>
 <p>Menos parámetros que LSTM, rendimiento similar en muchas tareas.</p>
-</section></section>
+</section>
+<section class="slide level3">
+
+
+<img data-src="img/09-redes-neuronales-recurrentes/neurona-gru.png" class="r-stretch quarto-figure-center"><p class="caption">Neurona GRU</p></section></section>
 <section>
 <section id="estabilidad-y-regularización" class="title-slide slide level2 center">
 <h2>Estabilidad y regularización</h2>

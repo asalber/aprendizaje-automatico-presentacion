@@ -14,14 +14,18 @@ navigation-mode: vertical
 slide-level: 3
 ---
 
+## Neurona tradicional (perceptron)
+
+![Neurona tradicional](img/05-aprendizaje-supervisado/perceptron)
+
 ## Neurona recurrente
 
 Una neurona recurrente recibe un vector de entrada $x_t$ y un estado oculto previo $h_{t-1}$.
 
 Actualización típica:
   $$
-  h_t = f(W_{xh}x_t + W_{hh}h_{t-1} + b_h), \quad
-  y_t = g(W_{hy}h_t + b_y)
+  h_t = f(W_{hx}x_t + W_{hh}h_{t-1} + b_h), \quad
+  y_t = g(W_{yh}h_t + b_y)
   $$
 
 La _función de activación_ $f$ suele ser $\tanh$ o ReLU.
@@ -31,6 +35,10 @@ La función de salida $g$ depende de la tarea (identidad para regresión, softma
 ---
 
 ![Neurona recurrente](img/09-redes-neuronales-recurrentes/neurona-recurrente)
+
+---
+
+![Despliegue temporal de una red neuronal recurrente](img/09-redes-neuronales-recurrentes/despliegue-red-neuronal-recurrente)
 
 ### Memoria del estado oculto
 
@@ -114,6 +122,10 @@ Ecuaciones por paso $t$
 
 El estado de celda $c_t$ crea un camino aditivo que preserva gradiente en el tiempo.
 
+---
+
+![Neurona LSTM](img/09-redes-neuronales-recurrentes/neurona-lstm.png)
+
 ### GRU (Gated Recurrent Unit)
 
 Mezcla compuertas y estado
@@ -127,6 +139,10 @@ Mezcla compuertas y estado
   $$
 
 Menos parámetros que LSTM, rendimiento similar en muchas tareas.
+
+---
+
+![Neurona GRU](img/09-redes-neuronales-recurrentes/neurona-gru.png)
 
 ## Estabilidad y regularización
 
